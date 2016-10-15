@@ -29,7 +29,7 @@ var ReviewSchema = new Schema({
     trim: true,
     index: true
   },
-  generalRating: {
+  generalRating: {    // 1 is up, 2 is down
     type: Number,
     default: 0
   },

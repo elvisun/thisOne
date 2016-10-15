@@ -132,3 +132,33 @@ exports.search = function(req, res) {
     }
   });
 };
+
+exports.getScore = function(req, res) { 
+  var url = req.params.domain;
+  //console.log(url);
+  Review.find({domain: url}).sort('-created').populate('user', 'displayName').exec(function(err, reviews) {
+    if (err) {
+      return res.status(400).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      var up = 0;
+      var down = 0;
+      for (var i = 0; i<reviews.length; i++) {
+        console.log(reviews[i]);
+        if (reviews[i].generalRating === 1) {
+          up = up + 1;
+        }
+        else if (reviews[i].generalRating === 2){
+          down = down + 1;
+        }
+      }
+      var r = {
+        up: up,
+        down: down
+      };
+      console.log(r);
+      res.jsonp(r);
+    }
+  });
+};

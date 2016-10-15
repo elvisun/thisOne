@@ -19,6 +19,11 @@ module.exports = function(app) {
 
   app.route('/api/reviews/search/:domain')
     .get(reviews.search);
+
+  app.route('/api/reviews/score/:domain')
+    .get(reviews.getScore);
+    
   // Finish by binding the Review middleware
   app.param('reviewId', reviews.reviewByID);
 };
+

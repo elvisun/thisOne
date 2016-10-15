@@ -1,12 +1,9 @@
 <section ng-controller="HomeController">
-  <div class="jumbotron">
-    <h1>The most powerful search engine</h1> <h4>after google</h4>
-  </div>
   <div class="text-center">
     <br>
     <div class="row">
       <div class="form-group">
-        <input class="form-control" ng-model="val" placeholder="What do you want to search today?">
+        <input class="form-control" ng-model="val" placeholder="Check the review of any website?">
       </div>
     </div>
     <div class="row">
@@ -16,6 +13,13 @@
     </div>
   </div>
   <div class="list-group">
+    <div class="row" ng-show="result">
+      <h4>
+        <span class="label label-info" >{{upvotes}} likes</span>
+        <span class="label label-danger" >{{downvotes}} dislikes</span>
+      </h4>
+    </div>
+    
     <a data-ng-repeat="review in result" class="list-group-item">
       <small class="list-group-item-text">
         Posted on
