@@ -13,6 +13,7 @@
 
   "permissions": [
       "tabs",
+      "<all_urls>",
       "http://www.google.com/*",
       "https://www.google.com/*"
   ],
