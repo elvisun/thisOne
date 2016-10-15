@@ -10,12 +10,6 @@ var mongoose = require('mongoose'),
  * Review Schema
  */
 var ReviewSchema = new Schema({
-  name: {
-    type: String,
-    default: '',
-    required: 'Please fill Review name',
-    trim: true
-  },
   created: {
     type: Date,
     default: Date.now
