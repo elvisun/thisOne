@@ -26,7 +26,8 @@ var ReviewSchema = new Schema({
   },
   domain: {
     type: String,
-    trim: true
+    trim: true,
+    index: true
   },
   generalRating: {
     type: Number,

@@ -116,3 +116,19 @@ exports.reviewByID = function(req, res, next, id) {
     next();
   });
 };
+
+// search given domain name
+
+exports.search = function(req, res) { 
+  var url = req.params.domain;
+  console.log(url);
+  Review.find({domain: url}).sort('-created').populate('user', 'displayName').exec(function(err, reviews) {
+    if (err) {
+      return res.status(400).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      res.jsonp(reviews);
+    }
+  });
+};

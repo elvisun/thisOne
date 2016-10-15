@@ -17,6 +17,8 @@ module.exports = function(app) {
     .put(reviews.update)
     .delete(reviews.delete);
 
+  app.route('/api/reviews/search/:domain')
+    .get(reviews.search);
   // Finish by binding the Review middleware
   app.param('reviewId', reviews.reviewByID);
 };

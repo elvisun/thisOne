@@ -9,3 +9,17 @@
 4. website front page design
 
 
+# Review data model
+website domain,
+user,
+time,
+reviews : {
+ general: like, dislike,
+ content: 
+ user 
+}
+flags : {
+	linkBait
+	money
+	virus
+}
