@@ -35,8 +35,10 @@ var options = {
 
 var data = require('./top500.json');
 
-var loop1 = function(j, i) {
-  if (j < 100){
+var loop1 = 
+
+function(j, i) {
+  if (j < 200){
     var req = http.request(options, function(res) {
       console.log('Status: ' + res.statusCode + '   ' + data[i]["FIELD1"]);
       //console.log('Headers: ' + JSON.stringify(res.headers));
@@ -75,7 +77,7 @@ var loop1 = function(j, i) {
 
 
 var loop2 = function(i) {
-  if (i < data.length){
+  if (i < data.length){    //data.length
     loop1(0, i);
     loop2(i + 1)
   }

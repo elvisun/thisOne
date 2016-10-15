@@ -142,20 +142,55 @@ exports.getScore = function(req, res) {
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      var up = 0;
+      var up = 0;   //general
       var down = 0;
+      var contentUp = 0;
+      var contentDown = 0;
+      var uxUp = 0;
+      var uxDown = 0;
+      var linkBaitFlag = 0;
+      var virusFlag = 0;
+      var moneyFlag = 0;
       for (var i = 0; i<reviews.length; i++) {
         console.log(reviews[i]);
         if (reviews[i].generalRating === 1) {
           up = up + 1;
         }
-        else if (reviews[i].generalRating === 2){
+        if (reviews[i].generalRating === 2){
           down = down + 1;
+        }
+        if (reviews[i].contentRating === 1){
+          contentUp = contentUp + 1;
+        }
+        if (reviews[i].contentRating === 2){
+          contentDown = contentDown + 1;
+        }
+        if (reviews[i].uxRating === 1){
+          uxUp = uxUp + 1;
+        }
+        if (reviews[i].uxRating === 2){
+          uxDown = uxDown + 1;
+        }
+        if (reviews[i].linkBaitFlag === true){
+          linkBaitFlag = linkBaitFlag + 1;
+        }
+        if (reviews[i].virusFlag === true){
+          virusFlag = virusFlag + 1;
+        }
+        if (reviews[i].moneyFlag === true){
+          moneyFlag = moneyFlag + 1;
         }
       }
       var r = {
         up: up,
-        down: down
+        down: down,
+        contentUp: contentUp,
+        contentDown: contentDown,
+        uxUp: uxUp,
+        uxDown: uxDown,
+        linkBaitFlag:linkBaitFlag/reviews.length,
+        virusFlag:virusFlag/reviews.length,
+        moneyFlag:moneyFlag /reviews.length
       };
       console.log(r);
       res.jsonp(r);
