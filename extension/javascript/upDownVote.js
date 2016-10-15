@@ -40,7 +40,6 @@ var getData = function(){
 	  $( "#upvotes" ).html( data.up );
 	  $( "#downvotes" ).html( data.down );
 	});
-
 };
 
 var updateData = function(theServer){
