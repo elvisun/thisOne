@@ -15,7 +15,8 @@
       "tabs",
       "<all_urls>",
       "http://www.google.com/*",
-      "https://www.google.com/*"
+      "https://www.google.com/*",
+      "https://the-one.herokuapp.com/*"
   ],
   "content_scripts": [
       {

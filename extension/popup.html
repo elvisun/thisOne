@@ -10,31 +10,7 @@
     <title>Getting Started Extension's Popup</title>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-    
-    <style>
-      html {
-        height: 150px;
-        width: 300px;
-      }
-      body {
-        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-        font-size: 100%;
-        height: 150px;
-        width: 300px;
-      }
-      #box {
-        /* avoid an excessively wide box text */
-        white-space: pre;
-        text-overflow: ellipsis;
-        overflow: hidden;
-      }
-      .blue {
-        color: rgb(83,94,183);
-      }
-      .red {
-        color: rgb(239,90,109);
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
 
     <!--
       - JavaScript and HTML must be in separate files: see our Content Security
@@ -47,7 +23,19 @@
   </head>
   <body>
     <div id="box" class="container">
-        <h4>General   <span id="general" class="fa fa-thumbs-o-up blue"></span>  <span class="fa fa-thumbs-o-down red"></span></h4>
+<!--       <div class="row">
+        <div class="col-xs-4">
+          <h4>General</h4>
+        </div>
+        <div class="col-xs-4">
+          <h4><span id="upvotes"></span><span id="upgeneral" class="fa fa-thumbs-o-up blue"></span></h4>
+        </div>
+        <div class="col-xs-4">
+          <h4><span id="downvotes"></span><span id="downgeneral" class="fa fa-thumbs-o-down red"></span></h4>
+        </div>  
+      </div> -->
+        <h4>General    <span id="upvotes"></span><span id="upgeneral" class="fa fa-thumbs-o-up blue"></span>   <span id="downvotes"></span><span id="downgeneral" class="fa fa-thumbs-o-down red"></span>
+        </h4>
         <h4>Content   <span id="content" class="fa fa-thumbs-o-up blue"></span>  <span class="fa fa-thumbs-o-down red"></span></h4>
         <h4>Experience   <span id="experience" class="fa fa-thumbs-o-up blue"></span>  <span class="fa fa-thumbs-o-down red"></span></h4>
         <h4><span class="fa fa-bug"></span> <span class="fa fa-frown-o"></span> <span class="fa fa-dollar"></span> </h4>

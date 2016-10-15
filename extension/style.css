@@ -1,0 +1,41 @@
+/******************************************
+                GENERAL
+******************************************/
+
+
+html {
+  height: 150px;
+  width: 300px;
+
+}
+body {
+  font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+  font-size: 100%;
+  color: rgba(0,0,0,0.9);
+  border-radius: 5px;
+  height: 150px;
+  width: 300px;
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+/******************************************
+                POP WINDOW
+******************************************/
+#box {
+  /* avoid an excessively wide box text */
+  white-space: pre;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.blue {
+  color: rgb(83,94,183);
+}
+.red {
+  color: rgb(239,90,109);
+}
+
+
+/******************************************
+              THUMBS
+******************************************/
