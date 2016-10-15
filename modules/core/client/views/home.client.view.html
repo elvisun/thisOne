@@ -12,15 +12,15 @@
       </p>
     </div>
   </div>
-  <div class="list-group" ng-show="val">
-    <div class="row" ng-show="result">
+  <div class="list-group">
+    <div class="row" ng-show="upvotes">
       <h4>
         <span class="label label-info" >{{upvotes}} likes</span>
         <span class="label label-danger" >{{downvotes}} dislikes</span>
       </h4>
     </div>
     
-    <a data-ng-repeat="review in result" class="list-group-item">
+<!--     <a data-ng-repeat="review in result" class="list-group-item">
       <small class="list-group-item-text">
         Posted on
         <span data-ng-bind="review.created | date:'mediumDate'"></span>
@@ -29,7 +29,7 @@
         <span data-ng-if="!review.user">Anonymous User</span>
       </small>
       <h4 class="list-group-item-heading" data-ng-bind="review.name"></h4>
-    </a>
+    </a> -->
   </div>
 
 </section>
