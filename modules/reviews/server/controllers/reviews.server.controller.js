@@ -13,6 +13,7 @@ var path = require('path'),
  * Create a Review
  */
 exports.create = function(req, res) {
+  console.log(req.body);
   var review = new Review(req.body);
   review.user = req.user;
 

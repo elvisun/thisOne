@@ -8,11 +8,11 @@ var reviewsPolicy = require('../policies/reviews.server.policy'),
 
 module.exports = function(app) {
   // Reviews Routes
-  app.route('/api/reviews').all(reviewsPolicy.isAllowed)
+  app.route('/api/reviews')
     .get(reviews.list)
     .post(reviews.create);
 
-  app.route('/api/reviews/:reviewId').all(reviewsPolicy.isAllowed)
+  app.route('/api/reviews/:reviewId')
     .get(reviews.read)
     .put(reviews.update)
     .delete(reviews.delete);

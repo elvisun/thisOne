@@ -23,6 +23,34 @@ var ReviewSchema = new Schema({
   user: {
     type: Schema.ObjectId,
     ref: 'User'
+  },
+  domain: {
+    type: String,
+    trim: true
+  },
+  generalRating: {
+    type: Number,
+    default: 0
+  },
+  contentRating: {
+    type: Number,
+    default: 0
+  },
+  uxRating: {
+    type: Number,
+    default: 0
+  },
+  linkBaitFlag:{
+    type: Boolean,
+    default: false
+  },
+  virusFlag:{
+    type: Boolean,
+    default: false
+  },
+  moneyFlag:{
+    type: Boolean,
+    default: false
   }
 });
 
