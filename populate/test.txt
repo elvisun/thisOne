@@ -1,1 +1,1 @@
-{"__v":0,"domain":"facebook.com","_id":"580270cd2ed8a2005e343167","moneyFlag":false,"virusFlag":false,"linkBaitFlag":false,"uxRating":1,"contentRating":1,"generalRating":1,"created":"2016-10-15T18:09:17.619Z"}
+{"__v":0,"domain":"yahoo.com","_id":"5802833e9adfc20e00c97a25","moneyFlag":false,"virusFlag":false,"linkBaitFlag":false,"uxRating":1,"contentRating":1,"generalRating":1,"created":"2016-10-15T19:27:58.960Z"}

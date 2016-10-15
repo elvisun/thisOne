@@ -25,8 +25,7 @@ var getRandomFlag = function (t){
 };
 
 var options = {
-    hostname: 'localhost',
-    port: 3000,
+    hostname: 'the-one.herokuapp.com',
     path: '/api/reviews',
     method: 'POST',
     headers: {
@@ -36,30 +35,30 @@ var options = {
 
 var data = require('./top500.json');
 
-for (var i = 0; i < 2; i++){
-  for (var j = 0; j<1000; j++) {
+var loop1 = function(j, i) {
+  if (j < 100){
     var req = http.request(options, function(res) {
-      console.log('Status: ' + res.statusCode);
+      console.log('Status: ' + res.statusCode + '   ' + data[i]["FIELD1"]);
       //console.log('Headers: ' + JSON.stringify(res.headers));
-      res.setEncoding('utf8');
-      res.on('data', function (body) {
-        //console.log('Body: ' + body);
-        fs.writeFile("test.txt", body, function(err) {
-          if(err) {
-              return console.log(err);
-          }
-          //console.log("The file was saved!");
-        }); 
-      });
+      // res.setEncoding('utf8');
+      // res.on('data', function (body) {
+      //   //console.log('Body: ' + body);
+      //   fs.writeFile("test.txt", body, function(err) {
+      //     if(err) {
+      //         return console.log(err);
+      //     }
+      //     //console.log("The file was saved!");
+      //   }); 
+      // });
     });
     req.on('error', function(e) {
       console.log('problem with request: ' + e.message);
     });
     // write data to request body
     // req.write('{"string": result}');  ///RESULT HERE IS A JSON
-
+    // console.log(data[i].FIELD1);
     var result = JSON.stringify({
-      "domain": data[i]["FIELD1"],
+      "domain": data[i].FIELD1,
       "moneyFlag": getRandomFlag(0.01),
       "virusFlag": getRandomFlag(0.01),
       "linkBaitFlag": getRandomFlag(0.05),
@@ -70,8 +69,17 @@ for (var i = 0; i < 2; i++){
     console.log(result);
     req.write(result);
     req.end();
+    loop1(j + 1, i);
   }
-}
+};
 
 
+var loop2 = function(i) {
+  if (i < data.length){
+    loop1(0, i);
+    loop2(i + 1)
+  }
+};
+
+loop2(0);
 
