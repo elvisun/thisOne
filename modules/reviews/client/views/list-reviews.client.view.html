@@ -1,0 +1,22 @@
+<section>
+  <div class="page-header">
+    <h1>Reviews</h1>
+  </div>
+  <div class="list-group">
+    <a data-ng-repeat="review in vm.reviews"
+       data-ui-sref="reviews.view({ reviewId: review._id })"
+       class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span data-ng-bind="review.created | date:'mediumDate'"></span>
+        by
+        <span data-ng-if="review.user" data-ng-bind="review.user.displayName"></span>
+        <span data-ng-if="!review.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" data-ng-bind="review.name"></h4>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" data-ng-if="vm.reviews.$resolved && !vm.reviews.length">
+    No Reviews yet, why don't you <a data-ui-sref="reviews.create">create one</a>?
+  </div>
+</section>
