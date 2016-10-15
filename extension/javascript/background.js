@@ -1,7 +1,16 @@
 chrome.extension.onRequest.addListener(
   function(request, sender, sendResponse) {
     // LOG THE CONTENTS HERE
-    console.log(request.content);
+    // console.log(request.content);
+    // var links = request.content.document.getElementsByTagName("a");
+    // for(var i=0;i<links.length;i++)
+    // {
+    //     if(links[i].href)
+    //     {
+    //         links[i].style.color = hex;  
+    //     }
+    // }
+    console.log(sendResponse);    
   });
 
 chrome.tabs.getSelected(null, function(tab) {
@@ -10,6 +19,15 @@ chrome.tabs.getSelected(null, function(tab) {
   chrome.tabs.executeScript(tab.id, {
        code: "chrome.extension.sendRequest({content: document.body.innerHTML}, function(response) { console.log('success'); });"
      }, function() { console.log('done'); });
-  alert(code);
-
 });
+
+
+// Checking page title
+if (document.title.indexOf("Google") != -1) {
+    //Creating Elements
+    var btn = document.createElement("BUTTON")
+    var t = document.createTextNode("CLICK ME");
+    btn.appendChild(t);
+    //Appending to DOM 
+    document.body.appendChild(btn);
+}

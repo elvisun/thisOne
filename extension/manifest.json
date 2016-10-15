@@ -22,7 +22,10 @@
       {
         "matches": ["http://www.google.com/*", "https://www.google.com/*","http://www.google.ca/*","https://www.google.ca/*"],
         "css": ["style.css"],
-        "js": ["injector.js", "upDownVote.js", "jquery.min.js"],
+        "js": [
+               "jquery.min.js",
+               "javascript/newPage.js"
+             ],
         "run_at": "document_end"
       }
   ]
