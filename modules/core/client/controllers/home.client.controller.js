@@ -4,7 +4,6 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
   function ($scope, Authentication, $http) {
     // This provides Authentication context.
     $scope.authentication = Authentication;
-    $scope.val = "www.google.com"
     $scope.search = function () {
     	console.log('/api/reviews/search/' + $scope.val)
 		$http({
@@ -28,5 +27,10 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
 		    console.log(errorCallback);
 		  });
     };
+    var init = function (){
+    	$scope.val = "www.google.com"
+    	$scope.search()
+    };
+    init();
   }
 ]);
