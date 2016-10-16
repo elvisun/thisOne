@@ -16,7 +16,8 @@ exports.create = function(req, res) {
   console.log(req.body);
   var review = new Review(req.body);
   review.user = req.user;
-
+  review.domain = urlParser(review.domain);
+  console.log(review);
   review.save(function(err) {
     if (err) {
       return res.status(400).send({
@@ -121,6 +122,7 @@ exports.reviewByID = function(req, res, next, id) {
 
 exports.search = function(req, res) { 
   var url = req.params.domain;
+  url = urlParser(url);
   console.log(url);
   Review.find({domain: url}).sort('-created').populate('user', 'displayName').exec(function(err, reviews) {
     if (err) {
@@ -135,6 +137,7 @@ exports.search = function(req, res) {
 
 exports.getScore = function(req, res) { 
   var url = req.params.domain;
+  url = urlParser(url);
   //console.log(url);
   Review.find({domain: url}).sort('-created').populate('user', 'displayName').exec(function(err, reviews) {
     if (err) {
@@ -196,4 +199,14 @@ exports.getScore = function(req, res) {
       res.jsonp(r);
     }
   });
+};
+
+
+var urlParser = function(url) {
+  var a = url.split(".");
+  if (a[0] === "www" || a[0] === "en") {
+    var n = a.splice(1,a.length -1);
+    url = n.join(".");
+  }
+  return url;
 };
