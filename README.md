@@ -1,25 +1,15 @@
-# What to do
+#Introduction
+THE ONE is a chrome extension that is a rating tool for the content (i.e., information accuracy, authenticity, and relevancy) and user experience on a website.
 
-1. button - plugin interface
+We collect people’s opinions on the website they visited, and all the reviews are displayed as the number of the thumbs-up and thumbs-down beside the link on the Google search result page.
 
-2. parse google HTML, and add icon
+THE ONE is designed to re-shape the SEO industry by integrating SEO and content marketing.
 
-3. server API
+We aim to make THE ONE a convenient, quick, simple, straightforward, and user-friendly rating and reviewing tool.
 
-4. website front page design
+Let’s vote, rate, review, and share, leading netizens to the right websites and guiding companies to do real content marketing. 
 
-
-# Review data model
-website domain,
-user,
-time,
-reviews : {
- general: like, dislike,
- content: 
- user 
-}
-flags : {
-	linkBait
-	money
-	virus
-}
+#Instruction
+Unpack what's in the "extension" folder into a chrome extension.
+Or 
+Visit the following website and enter the url of the website you want to investigate in.
