@@ -36,7 +36,7 @@ setTimeout(function(){
                 {paramOne : 1, paramX : 'abc'},
                 function(data) {
                    up = data.up;
-                   down = data.down;
+                   down = data.down;g
 
                     var upnode = document.createElement("span"); 
                     var q = document.createTextNode("  " + up.toString());       // Create a text node
