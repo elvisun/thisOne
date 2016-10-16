@@ -35,3 +35,21 @@ a:hover .header-profile-image {
 .has-error .help-inline.error-text {
   display: inline;
 }
+
+.spacing {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+.home-blue {
+  background-color: rgb(0,147,190);
+}
+.label-danger {
+  background-color: rgb(212,65,114);
+}
+
+.home-center{
+  text-align:center;
+  font-size: 20px;
+  height: 40px;
+}
+

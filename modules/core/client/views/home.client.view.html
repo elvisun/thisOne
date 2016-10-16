@@ -1,23 +1,27 @@
 <section ng-controller="HomeController">
-  <div class="text-center">
-    <br>
-    <div class="row">
-      <div class="form-group">
-        <input class="form-control" ng-model="val" placeholder="Check the review of any website?">
+  <div class="spacing"> </div>
+    <div class="text-center">
+      <br>
+      <div class="row">
+        <div class="form-group">
+          <input class="form-control home-center" ng-model="val" placeholder="Check the review of any website?">
+        </div>
+      </div>
+      <div class="row">
+        <p>
+          <a class="btn btn-default btn-lg" href="#" ng-click="search()">Search</a>
+        </p>
       </div>
     </div>
-    <div class="row">
-      <p>
-        <a class="btn btn-primary btn-lg" href="#" ng-click="search()">Search</a>
-      </p>
+  <div class="container">
+    <div class="row" ng-show="upvotes">
+      <div>
+        <h1 class="text-center">
+          <span class="label label-info home-blue" >{{upvotes}} likes</span>
+          <span class="label label-danger home-red" >{{downvotes}} dislikes</span>
+        </h1>
+      </div>
     </div>
-  </div>
-  <div class="row" ng-show="upvotes">
-  <div class="col-md-6 col-md-offest-2">
-    <h1>
-      <span class="label label-info" >{{upvotes}} likes</span>
-      <span class="label label-danger" >{{downvotes}} dislikes</span>
-    </h1>
   </div>
   
 <!--     <a data-ng-repeat="review in result" class="list-group-item">
