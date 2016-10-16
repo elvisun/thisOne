@@ -1,22 +1,20 @@
 /******************************************
                 GENERAL
 ******************************************/
-.no-margin{
-  margin: 0;
+.row-spacer{
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
-html {
-  height: 150px;
-  width: 300px;
 
-}
 body {
+
   font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-  font-size: 100%;
+  /*font-size: 100%;*/
   color: rgba(0,0,0,0.9);
-  border-radius: 5px;
-  height: 150px;
-  width: 300px;
+  /*border-radius: 5px;*/
+  height: 300px;
+  width: 400px;
   background-color: #FFFFFF;
   border-color: #FFFFFF;
 }
@@ -24,12 +22,6 @@ body {
 /******************************************
                 POP WINDOW
 ******************************************/
-#box {
-  /* avoid an excessively wide box text */
-  white-space: pre;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
 .blue {
   color: rgb(83,94,183);
 }
@@ -41,3 +33,7 @@ body {
 /******************************************
               THUMBS
 ******************************************/
+.highlight-selection:hover{
+  background-color: rgba(0,0,0,0.1);
+
+}

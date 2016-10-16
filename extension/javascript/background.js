@@ -1,5 +1,5 @@
 chrome.extension.onRequest.addListener(
-  	function(request, sender, sendResponse) {
+    function(request, sender, sendResponse) {
     // LOG THE CONTENTS HERE
 
     // console.log(request.content);
@@ -15,6 +15,7 @@ chrome.extension.onRequest.addListener(
   });
 
 
+<<<<<<< HEAD
 
 // chrome.tabs.getSelected(null, function(tab) {
 
@@ -40,3 +41,5 @@ if (document.title.indexOf("Google") != -1) {
     //Appending to DOM 
     document.body.appendChild(btn);
 }
+=======
+>>>>>>> long
