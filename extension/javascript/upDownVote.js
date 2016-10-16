@@ -79,6 +79,9 @@ var getWebsiteURL = function(){
 	    var domain = url.match(/^[\w-]+:\/{2,}\[?([\w\.:-]+)\]?(?::[0-9]*)?/)[1];
 	    // console.log(domain);
 	    domainName = domain;
+	    console.log("the parsed URL is: " + domain);
+
+	    $("#findTheDomain").html(domainName);
 	    getData();
 
 	});
@@ -109,7 +112,7 @@ var updateData = function(theServer){
 
 var resetServerProperties = function(){
 	testServer = {
-	  "domain": getWebsiteURL(),
+	  "domain": domainName,
 	  "moneyFlag": false,
 	  "virusFlag": false,
 	  "linkBaitFlag": false,
