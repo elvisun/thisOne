@@ -14,9 +14,6 @@ chrome.extension.onRequest.addListener(
     console.log(sendResponse);    
   });
 
-
-<<<<<<< HEAD
-
 // chrome.tabs.getSelected(null, function(tab) {
 
 //   // Now inject a script onto the page
@@ -41,5 +38,3 @@ if (document.title.indexOf("Google") != -1) {
     //Appending to DOM 
     document.body.appendChild(btn);
 }
-=======
->>>>>>> long
