@@ -204,7 +204,7 @@ exports.getScore = function(req, res) {
 
 var urlParser = function(url) {
   var a = url.split(".");
-  if (a[0] === "www") {
+  if (a[0] === "www" || a[0] === "en") {
     var n = a.splice(1,a.length -1);
     url = n.join(".");
   }
