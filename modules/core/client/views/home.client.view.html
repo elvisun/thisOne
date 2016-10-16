@@ -12,24 +12,23 @@
       </p>
     </div>
   </div>
-  <div class="list-group">
-    <div class="row" ng-show="upvotes">
-      <h4>
-        <span class="label label-info" >{{upvotes}} likes</span>
-        <span class="label label-danger" >{{downvotes}} dislikes</span>
-      </h4>
-    </div>
-    
-<!--     <a data-ng-repeat="review in result" class="list-group-item">
-      <small class="list-group-item-text">
-        Posted on
-        <span data-ng-bind="review.created | date:'mediumDate'"></span>
-        by
-        <span data-ng-if="review.user" data-ng-bind="review.user.displayName"></span>
-        <span data-ng-if="!review.user">Anonymous User</span>
-      </small>
-      <h4 class="list-group-item-heading" data-ng-bind="review.name"></h4>
-    </a> -->
+  <div class="row" ng-show="upvotes">
+  <div class="col-md-6 col-md-offest-2">
+    <h1>
+      <span class="label label-info" >{{upvotes}} likes</span>
+      <span class="label label-danger" >{{downvotes}} dislikes</span>
+    </h1>
   </div>
+  
+<!--     <a data-ng-repeat="review in result" class="list-group-item">
+    <small class="list-group-item-text">
+      Posted on
+      <span data-ng-bind="review.created | date:'mediumDate'"></span>
+      by
+      <span data-ng-if="review.user" data-ng-bind="review.user.displayName"></span>
+      <span data-ng-if="!review.user">Anonymous User</span>
+    </small>
+    <h4 class="list-group-item-heading" data-ng-bind="review.name"></h4>
+  </a> -->
 
 </section>
