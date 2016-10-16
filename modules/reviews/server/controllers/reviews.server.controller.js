@@ -9,6 +9,19 @@ var path = require('path'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
   _ = require('lodash');
 
+
+
+
+var urlParser = function(url) {
+  var a = url.split(".");
+  if (a[0] === "www" || a[0] === "en") {
+    var n = a.splice(1,a.length -1);
+    url = n.join(".");
+  }
+  return url;
+};
+
+
 /**
  * Create a Review
  */
@@ -124,7 +137,7 @@ exports.search = function(req, res) {
   var url = req.params.domain;
   url = urlParser(url);
   console.log(url);
-  Review.find({domain: url}).sort('-created').populate('user', 'displayName').exec(function(err, reviews) {
+  Review.find({ domain: url }).sort('-created').populate('user', 'displayName').exec(function(err, reviews) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
@@ -139,7 +152,7 @@ exports.getScore = function(req, res) {
   var url = req.params.domain;
   url = urlParser(url);
   //console.log(url);
-  Review.find({domain: url}).sort('-created').populate('user', 'displayName').exec(function(err, reviews) {
+  Review.find({ domain: url }).sort('-created').populate('user', 'displayName').exec(function(err, reviews) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
@@ -199,14 +212,4 @@ exports.getScore = function(req, res) {
       res.jsonp(r);
     }
   });
-};
-
-
-var urlParser = function(url) {
-  var a = url.split(".");
-  if (a[0] === "www" || a[0] === "en") {
-    var n = a.splice(1,a.length -1);
-    url = n.join(".");
-  }
-  return url;
 };

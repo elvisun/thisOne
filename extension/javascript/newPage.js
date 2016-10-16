@@ -8,12 +8,12 @@ setTimeout(function(){
 
 	var style = document.createElement('style');
 	style.type = 'text/css';
-	style.innerHTML = '.upvote { color: green; font-size: 14px};';
+	style.innerHTML = '.upvote { color: rgb(0,147,190); font-size: 14px};';
 	document.getElementsByTagName('head')[0].appendChild(style);
 
     var style = document.createElement('style');
     style.type = 'text/css';
-    style.innerHTML = '.downvote { color: red; font-size: 14px };';
+    style.innerHTML = '.downvote { color: rgb(212,65,114); font-size: 14px };';
     document.getElementsByTagName('head')[0].appendChild(style);
 
 	var t = document.getElementsByClassName("r");
@@ -38,13 +38,13 @@ setTimeout(function(){
                    up = data.up;
                    down = data.down;
 
-                    var upnode = document.createElement("span"); 
+                    var upnode = document.createElement("b"); 
                     var q = document.createTextNode("  " + up.toString());       // Create a text node
                     upnode.appendChild(q);
                     upnode.className += "upvote st";
                     t[i].appendChild(upnode);
 
-                    var downnode = document.createElement("span"); 
+                    var downnode = document.createElement("b"); 
                     var q = document.createTextNode(" " + down.toString());       // Create a text node
                     downnode.appendChild(q);
                     downnode.className += "downvote st";
